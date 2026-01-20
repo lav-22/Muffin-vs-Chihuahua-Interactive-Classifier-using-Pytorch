@@ -1,0 +1,31 @@
+<!doctype html>
+<html>
+    <head>
+        <title>Muffin vs Chihuahua Image Prediction</title>
+        <h1>Muffin vs Chihuahua Image Prediction</h1>
+    </head>
+
+    <body>
+        <h2>Find out if your image is perceived as a muffin or chihuahua by computers!</h2>
+
+        <input type="file" id="imageInput" >
+        <button type="submit" onclick="predict()">Predict</button>
+
+        <h3 id="predictionText">Prediction:</h3>
+
+        <div id="feedback" style="display:none;">
+            <p>Was the prediction correct?</p>
+            <button onclick="sendFeedback(true)">Correct</button>
+            <button onclick="sendFeedback(false)">Wrong</button>
+        </div>
+
+        <h4>Accuracy: <span id="accuracy">{{  "%.2f"|format(accuracy*100)  }}%</span></h4>
+        <p>
+                Correct: <span id="correct">{{  correct  }}</span> |
+                Wrong: <span id="wrong"> {{  wrong  }}</span>
+        </p>
+
+        <script src="{{  url_for('static', filename='script.js')  }}"></script>
+    </body>
+
+</html>
